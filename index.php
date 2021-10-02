@@ -17,6 +17,6 @@ else
    <br>
         [<a href="">Home </a>]
    <br>
-   <?php require_once("./routes.php");?>
+   <?php require_once("routes.php");?>
 </body>
 </html> 
