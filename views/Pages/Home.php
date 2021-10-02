@@ -1,3 +1,1 @@
-<?php
-  echo "Hello";
-?>
+<p> Welcome to our homepage </p>
