@@ -17,8 +17,8 @@ else
    <br>
         [<a href="">Home(หน้าหลัก) </a>]
         [<a href="">quotation/Dream </a>]
-        [<a href="">quotation_Detail/Aor </a>]
-        [<a href="">price Range/T </a>]
+        [<a href="">quotationDetail/Aor </a>]
+        [<a href="">priceRange/T </a>]
    <br>
    <?php require_once("routes.php");?>
 </body>
