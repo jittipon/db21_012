@@ -1,3 +1,4 @@
+<?php
 $servername = "localhost";
 $username = "db21_012";
 $password = "db21_012";
@@ -11,3 +12,4 @@ if(!$conn->select_db($dbname))
 {
   die("Connection failed: ".$conn->connect_error);
 }
+?>
