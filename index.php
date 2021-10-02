@@ -16,6 +16,9 @@ else
    <?php echo "controller = ".$controller.",action = ".$action;?>
    <br>
         [<a href="">Home </a>]
+        [<a href="">quotation </a>]
+        [<a href="">quotation_detail </a>]
+        [<a href="">price range </a>]
    <br>
    <?php require_once("routes.php");?>
 </body>
