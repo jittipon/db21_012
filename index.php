@@ -15,10 +15,10 @@ else
 <body>
    <?php echo "controller = ".$controller.",action = ".$action;?>
    <br>
-        [<a href="">Home </a>]
+        [<a href="">Home(หน้าหลัก) </a>]
         [<a href="">quotation/Dream </a>]
-        [<a href="">quotation_detail/Aor </a>]
-        [<a href="">price range/T </a>]
+        [<a href="">quotation_Detail/Aor </a>]
+        [<a href="">price Range/T </a>]
    <br>
    <?php require_once("routes.php");?>
 </body>
