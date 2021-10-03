@@ -7,11 +7,31 @@ class Order
   public $employeeId;
   public $employeeName;
 
-public function _construct($orderId,$orderDate)
+public function _construct($orderId,$orderDate,$customerId,$customerName,$employeeId,$employeeName)
 {
     $this->orderId = $orderId;
     $this->orderDate = $orderDate;
+    $this->customerId = $customerId;
+    $this->customerName = $customerName;
+    $this->employeeId = $employeeId;
+    $this->employeeName = $employeeName;
 }
+
+public static function get($orderId)
+{
+    require("connection_connect.php");
+    $sql = "";
+}
+
+
+
+
+
+
+
+
+
+
 
 public static function getAll()
 {
