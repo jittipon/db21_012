@@ -13,7 +13,8 @@ else
 <html>
 <head></head>
 <body>
-   <?php echo "controller = ".$controller.",action = ".$action;?>
+   <?php //echo "controller = ".$controller.",action = ".$action;?>
+    controller = pages , action = home
    <br>
         [<a href="">Home(หน้าหลัก) </a>]
         [<a href="">order/Dream </a>]
