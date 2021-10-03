@@ -3,11 +3,11 @@ class Order
   public $orderId;
   public $orderDate;
   public $customerId;
-  public $EmployeeId;
-  public $orderDate;
-  public $orderDate;
+  public $customerName;
+  public $employeeId;
+  public $employeeName;
 
-punlic function_construct($orderId,$orderDate)
+public function_construct($orderId,$orderDate)
 {
     $this->orderId = $orderId;
     $this->orderDate = $orderDate;
