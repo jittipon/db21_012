@@ -1,12 +1,37 @@
 <?php
 class Order
-  public $orderId,$orderDate;
+  public $orderId;
+  public $orderDate;
+  public $customerId;
+  public $customerName;
+  public $employeeId;
+  public $employeeName;
 
-punlic function_construct($orderId,$orderDate)
+public function _construct($orderId,$orderDate,$customerId,$customerName,$employeeId,$employeeName)
 {
     $this->orderId = $orderId;
     $this->orderDate = $orderDate;
+    $this->customerId = $customerId;
+    $this->customerName = $customerName;
+    $this->employeeId = $employeeId;
+    $this->employeeName = $employeeName;
 }
+
+public static function get($orderId)
+{
+    require("connection_connect.php");
+    $sql = "";
+}
+
+
+
+
+
+
+
+
+
+
 
 public static function getAll()
 {
