@@ -16,7 +16,7 @@ else
    <?php //echo "controller = ".$controller.",action = ".$action;?>
     controller = pages , action = home
    <br>
-        [<a href="">Home(หน้าหลัก) </a>]
+        [<a href="/school">Home(หน้าหลัก) </a>]
         [<a href="">order/Dream </a>]
         [<a href="">orderDetail/Aor </a>]
         [<a href="">priceRange/T </a>]
