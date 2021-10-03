@@ -14,14 +14,12 @@ else
 <head></head>
 <body>
    <?php //echo "controller = ".$controller.",action = ".$action;?>
-    controller = pages , action = home
    <br>
-        [<a href="/school">Home(หน้าหลัก) </a>]
-        [<a href="">order/Dream </a>]
-        [<a href="">orderDetail/Aor </a>]
-        [<a href="">priceRange/T </a>]
+        [<a href="?controller = pages & action = home">Home(หน้าหลัก) </a>]
+        [<a href="?controller = order & action=index">order/Dream </a>]
+        [<a href="?controller = orderDetail & action=index">orderDetail/Aor </a>]
+        [<a href="?controller = priceRange & action=index">priceRange/T </a>]
    <br>
-   <?// php require_once("routes.php");?>
-   <p> Welcome to my world </p>
+   <?php require_once("routes.php");?>
 </body>
 </html> 
