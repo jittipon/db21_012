@@ -22,6 +22,6 @@ else
         [<a href="">priceRange/T </a>]
    <br>
    <?// php require_once("routes.php");?>
-  <<info + view>>
+   <p> Welcome to my world </p>
 </body>
 </html> 
