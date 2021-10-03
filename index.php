@@ -20,7 +20,7 @@ else
         [<a href="">orderDetail/Aor </a>]
         [<a href="">priceRange/T </a>]
    <br>
-   //<?php require_once("routes.php");?>//
+   //<?php require_once("routes.php");?>
   <<info + view>>
 </body>
 </html> 
