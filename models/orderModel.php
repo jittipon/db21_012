@@ -1,6 +1,11 @@
 <?php
 class Order
-  public $orderId,$orderDate;
+  public $orderId;
+  public $orderDate;
+  public $customerId;
+  public $EmployeeId;
+  public $orderDate;
+  public $orderDate;
 
 punlic function_construct($orderId,$orderDate)
 {
