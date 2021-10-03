@@ -7,7 +7,7 @@ class Order
   public $employeeId;
   public $employeeName;
 
-public function_construct($orderId,$orderDate)
+public function _construct($orderId,$orderDate)
 {
     $this->orderId = $orderId;
     $this->orderDate = $orderDate;
