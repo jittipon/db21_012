@@ -9,7 +9,7 @@ class Order
 
 public function _construct($orderId,$orderDate,$customerId,$customerName,$employeeId,$employeeName)
 {
-    $this->orderId = $orderId;
+    $this->orderId = $o_Id;
     $this->orderDate = $orderDate;
     $this->customerId = $customerId;
     $this->customerName = $customerName;
