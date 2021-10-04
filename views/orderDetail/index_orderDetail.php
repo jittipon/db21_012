@@ -2,7 +2,8 @@
 <table border = 1>
 <tr> <td>order detail id</td><td>order detail amount</td><td>order detail color amount</td><td>order out id</td><td>product with color</td>
 <td>update</td><td>delete</td></tr>
-new orderDetail <a href=?controller=orderDetail&action=newOrderDetail>click</a><br>
+<br>ชาญวิชญ์ จำปา 6220504640 <br>
+<br><br>new orderDetail <a href=?controller=orderDetail&action=newOrderDetail>: click</a><br><br>
 
 <form method="get"action="">
     <input type="text" name="key">
