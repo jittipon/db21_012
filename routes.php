@@ -1,6 +1,8 @@
 <?php
 //$controllers = array('pages'=>['home','error']); //list controller and action
-$controllers = array('pages'=>['home','error'],'order'=>['index'],'orderDetail'=>['index','delete','addOrderDetail','newOrderDetail']);
+
+$controllers = array('pages'=>['home','error'],'order'=>['index','newOrder'],'orderDetail'=>['index','delete','addOrderDetail','newOrderDetail']);
+
 
 function call($controller,$action)
 {
