@@ -12,7 +12,6 @@
 <?php
   foreach($order_list as $OrderOut)
   {
-      echo "hello";
        echo 
       "<tr>
       <td>$OrderOut->orderId</td>
