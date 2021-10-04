@@ -10,8 +10,8 @@ function call($controller,$action)
         case "pages":   $controller = new PagesController();
                         break;
         case "order":   require_once("models/orderModel.php");
-                        //require_once("models/customerModel.php");
-                        //require_once("models/employeeModel.php");
+                        require_once("models/customerModel.php");
+                        require_once("models/employeeModel.php");
                         $controller = new OrderController();
                         break;
     }
