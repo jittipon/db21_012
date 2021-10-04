@@ -1,7 +1,5 @@
-<<<<<<< HEAD
-
-=======
 <table border = 1>
+New Order : <a href="?controller=order&action=newOrder">Click </a><br>
 <tr>
      <td>OrderID</td>
      <td>OrderDate</td>
@@ -14,17 +12,15 @@
 <?php
   foreach($order_list as $OrderOut)
   {
-      echo "hello";
        echo 
       "<tr>
       <td>$OrderOut->orderId</td>
       <td>$OrderOut->orderDate</td>
       <td>$OrderOut->customerName</td>
       <td>$OrderOut->employeeName</td>
-      <td>$OrderOut->update</td>
-      <td>$OrderOut->delete</td>
+      <td>update</td>
+      <td>delete</td>
       </tr>";
   }
 echo "</table>";
 ?>
->>>>>>> fe08dfb0054515873fa3a06726aee0afb1bd46bd
