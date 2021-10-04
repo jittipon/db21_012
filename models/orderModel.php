@@ -41,7 +41,8 @@ class Order
       $orderList = [];
       require("connection_connect.php");
       $sql = "SELECT OrderOut_ID,OrderOut_DateOrder,Customer_Name,Employee_Name FROM OrderOut
-                NATURAL JOIN Customer NATURAL JOIN Employee";
+                NATURAL JOIN Customer NATURAL JOIN Employee
+                ORDER BY OrderOut_ID";
       $result = $conn->query($sql);
       while($my_row = $result->fetch_assoc())
       {
@@ -61,9 +62,11 @@ class Order
   {
       $orderList = [];
       require("connection_connect.php");
-      $sql = "";
+      $sql = "SELECT OrderOut_ID,OrderOut_DateOrder,Customer_Name,Employee_Name FROM OrderOut
+                NATURAL JOIN Customer NATURAL JOIN Employee
+                WHERE (OrderOut_ID LIKE '%$key%' OR OrderOut_DateOrder LIKE '%$key%' OR Customer_Name LIKE '%$key%' OR Employee_Name LIKE '%$key%')";
       $result = $conn->query($sql);
-      while($my_roow = $result->fetch_assoc())
+      while($my_row = $result->fetch_assoc())
       {
             $orderId = $my_row["OrderOut_ID"];
             $orderDate = $my_row["OrderOut_DateOrder"];
@@ -80,11 +83,11 @@ class Order
   public static function add($orderId,$orderDate,$customerId,$employeeId)
   {
       require("connection_connect.php");
-      $sql = "INSERT INTO 'OrderOut' ('OrderOut_ID','OrderOut_DateOrder','Customer_ID','Employee_ID') VALUES
-             ('$orderId','$orderDate','$customerId','$employeeId')";
+      echo "$orderId,$orderDate,$customerId,$employeeId";
+      $sql = "INSERT INTO `OrderOut` (`OrderOut_ID`, `OrderOut_DateOrder`, `Customer_ID`, `Employee_ID`, `OrderOut_PaymentCondition`, `OrderOut_EarnestMoneyREQ`, `OrderOut_EarnestMoneyREQStatus`, `OrderOut_EarnestMoneyPaidDate`, `Approver_ID`, `OrderOut_DateApprove`, `OrderOut_ReservePercent`, `OrderOut_Vat`, `OrderOut_Status`, `OrderOut_DeliveryStatus`) VALUES ('$orderId', '$orderDate', '$customerId', '$employeeId', '0', NULL, NULL, NULL, NULL, NULL, NULL, '0.7', 'offered', NULL);";
       $result = $conn->query($sql);
       require("connection_close.php");
-      return "Add Success $result rows";
+      return "Add Success rows";
   }
     
   public static function update($orderId,$orderDate,$customerId,$employeeId)
@@ -93,7 +96,7 @@ class Order
       $sql = "UPDATE OrderOut SET OrderOut_DateOrder = '$orderDate',Employee_ID = '$employeeId',Customer_ID = 'customerId' WHERE OrderOut.Order_ID = '$orderId'";
       $result = $conn->query($sql);
       require("connection_close.php");
-      return "Update Success $result rows";
+      return "Update Success rows";
   }
   
   public static function delete($orderId)
@@ -102,7 +105,7 @@ class Order
       $sql = "DELETE FROM OrderOut WHERE OrderOut.Order_ID = '$orderId'";
       $result = $conn->query($sql);
       require("connection_close.php");
-      return "Delete Success $result rows";
+      return "Delete Success rows";
   }
 }
 ?>
