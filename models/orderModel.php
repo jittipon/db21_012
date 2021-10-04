@@ -1,14 +1,14 @@
 <?php
 class Order
 {
-    public $O_ID;
+    public $orderId;
     public $orderDate;
     public $customerId;
     public $customerName;
     public $employeeId;
     public $employeeName;
 
-  public function _construct($orderId,$orderDate,$customerId,$customerName,$employeeId,$employeeName)
+  public function _construct($O_ID,$O_Date,$customerId,$customerName,$employeeId,$employeeName)
   {
       $this->orderId = $orderId;
       $this->orderDate = $orderDate;
