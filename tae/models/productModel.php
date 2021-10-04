@@ -15,7 +15,7 @@ class Product
         $result = $conn->query($sql);
         while($my_row = $result->fetch_assoc()){
             $productID = $my_row['Product_ID'];
-            $productName = $my_row['Product_Name'];
+            $productName = $my_row['Name'];
             $product_List[] = new product($productID,$productName);
         }
         require("connection_close.php");
