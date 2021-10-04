@@ -43,7 +43,7 @@ class Order
       $sql = "SELECT OrderOut_ID,OrderOut_DateOrder,Customer_Name,Employee_Name FROM OrderOut
                 NATURAL JOIN Customer NATURAL JOIN Employee";
       $result = $conn->query($sql);
-      while($my_roow = $result->fetch_assoc())
+      while($my_row = $result->fetch_assoc())
       {
             $orderId = $my_row["OrderOut_ID"];
             $orderDate = $my_row["OrderOut_DateOrder"];

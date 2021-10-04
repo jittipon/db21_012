@@ -4,6 +4,7 @@ $username = "db21_012";
 $password = "db21_012";
 $dbname = "db21_012";
 $conn = new mysqli($servername,$username,$password);
+mysqli_set_charset($conn, "utf8");
 if($conn->connect_error)
 {
   die("Connection failed: ". $conn->connect_error);

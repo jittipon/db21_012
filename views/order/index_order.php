@@ -18,8 +18,8 @@
       <td>$OrderOut->orderDate</td>
       <td>$OrderOut->customerName</td>
       <td>$OrderOut->employeeName</td>
-      <td>$OrderOut->update</td>
-      <td>$OrderOut->delete</td>
+      <td>update</td>
+      <td>delete</td>
       </tr>";
   }
 echo "</table>";
