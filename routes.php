@@ -1,18 +1,26 @@
 <?php
 //$controllers = array('pages'=>['home','error']); //list controller and action
-$controllers = array('pages'=>['home','error'],'order'=>['index','newOrder','addOrder','searchOrder','updateFromOrder','updateOrder']);
+$controllers = array('pages'=>['home','error'],'order'=>['index'],'orderDetail'=>['index','delete','addOrderDetail','newOrderDetail']);
 
 function call($controller,$action)
 {
+  
     require_once("controllers/".$controller."_controller.php");
+    
+    echo $controller;
     switch($controller)
     {
         case "pages":   $controller = new PagesController();
                         break;
         case "order":   require_once("models/orderModel.php");
-                        require_once("models/customerModel.php");
-                        require_once("models/employeeModel.php");
                         $controller = new OrderController();
+                        break;
+        case "orderDetail": 
+                        echo ' call models orderDetail';
+                        require_once("models/orderDetailModel.php"); 
+                        require_once("models/orderOutModel.php");
+                        require_once("models/productWithColor.php");
+                        $controller = new orderDetailController();
                         break;
     }
     $controller->{$action}();
