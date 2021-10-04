@@ -1,5 +1,5 @@
 <table border = 1>
- 
+
 <tr>
      <td>OrderID</td>
      <td>OrderDate</td>
