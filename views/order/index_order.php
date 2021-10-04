@@ -11,7 +11,8 @@
 <?php
   foreach($order_list as $OrderOut)
   {
-      echo 
+      echo "hello";
+       echo 
       "<tr>
       <td>$OrderOut->orderId</td>
       <td>$OrderOut->orderDate</td>
