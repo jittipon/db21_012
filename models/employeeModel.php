@@ -21,7 +21,7 @@ class Employee
             $employeeList[] = new Customer($EmpID, $EmpName);
         }
         require("connection_close.php");
-        return $customerList;
+        return $employeeList;
     }
 }
 ?>

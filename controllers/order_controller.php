@@ -15,5 +15,15 @@ class OrderController
         $customer_list = Customer::getAll();
         require_once('views/order/newOrder.php');
     }
+
+    public function addOrder(){
+        
+        $orderId = $_GET['orderId'];
+        $orderDate = $_GET['orderDate'];
+        $customerId = $_GET['customerId'];
+        $employeeId = $_GET['employeeId'];
+        Order::add($orderId,$orderDate,$customerId,$employeeId);
+        OrderController::index();
+    }
 }
 ?>
