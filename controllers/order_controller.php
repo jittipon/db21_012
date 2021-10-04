@@ -32,5 +32,15 @@ class OrderController
         $order_list = Order::search($key);
         require_once('views/order/index_order.php');
     }
+
+    public function updateOrder()
+    {
+        $orderId = $_GET['orderId'];
+        $orderDate = $_GET['orderDate'];
+        $customerId = $_GET['customerId'];
+        $employeeId = $_GET['employeeId'];
+        Order::update($orderId,$orderDate,$customerId,$employeeId);
+        OrderController::index();
+    }
 }
 ?>
