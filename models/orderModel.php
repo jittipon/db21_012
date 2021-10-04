@@ -8,7 +8,7 @@ class Order
     public $employeeId;
     public $employeeName;
 
-  public function _construct($O_ID,$O_Date,$customerId,$customerName,$employeeId,$employeeName)
+  public function _construct($orderId,$orderDate,$customerId,$customerName,$employeeId,$employeeName)
   {
       $this->orderId = $orderId;
       $this->orderDate = $orderDate;
@@ -21,33 +21,70 @@ class Order
   public static function get($orderId)
   {
       require("connection_connect.php");
-      $sql = "";
+      $sql = "SELECT * FROM OrderOut,customer,employee WHERE OrderOut.OrderOut_ID = 'orderId' AND OrderOut.Customer_ID = Customer.Customer_ID AND OrderOut.EmployeeSeller_ID = Employee.Employee_ID";
+      $result = $conn->query($sql);
+      $my_row = $result->fetch_assoc();
+      $orderId; = $my_row[OrderOut_ID];
+      $orderDate; = $my_row[OrderOut_DateOrder];
+      $customerId; = $my_row[Customer_ID];
+      $customerName; = $my_row[Customer_Name];
+      $employeeId; = $my_row[Employee_ID];
+      $employeeName; = $my_row[Employee_Name];
+      require("connection_close.php");
+      return new Order($orderId,$orderDate,$customerId,$customerName,$employeeId,$employeeName);
   }
-
-
-
-
-
-
-
-
-
-
-
+    
   public static function getAll()
   {
       $orderList = [];
       require("connection_connect.php");
-      $sql = "select * from OrderOut";
+      $sql = "SELECT * FROM OrderOut,customer,employee WHERE OrderOut.Customer_ID = Customer.Customer_ID AND OrderOut.EmployeeSeller_ID = Employee.Employee_ID ORDER BY OrderOut.OrderOut_ID";
       $result = $conn->query($sql);
-      while($my_roow == $result->fetch_assoc())
+      while($my_roow = $result->fetch_assoc())
       {
-          $order_id = $my_row[OrderOut_ID];
-          $order_date = $my_row[OrderOut_DateOrder];
-          $orderList[] = new Order($order_id,$order_date);
+          $orderId; = $my_row[OrderOut_ID];
+          $orderDate; = $my_row[OrderOut_DateOrder];
+          $customerId; = $my_row[Customer_ID];
+          $customerName; = $my_row[Customer_Name];
+          $employeeId; = $my_row[Employee_ID];
+          $employeeName; = $my_row[Employee_Name];
+          $orderList[] = new Order($orderId,$orderDate,$customerId,$customerName,$employeeId,$employeeName);
       }
       require("connection_close.php");
       return $orderList;
   }
+  
+  public static function search($key)
+  {
+      $orderList = [];
+      require("connection_connect.php");
+      $sql = "SELECT * FROM OrderOut,customer,employee WHERE OrderOut.Customer_ID = Customer.Customer_ID AND OrderOut.EmployeeSeller_ID = Employee.Employee_ID 
+      AND (OrdreOut.OrderOut_ID LIKE '%$key%' OR Customer.Customer_ID LIKE '%$key%' OR Customer.Customer_Name LIKE '%$key%' OR Employee.Employee_ID LIKE '%$key%' OR Employee.Employee_Name LIKE '%$key%' OR OrderOut.OrderOut_DateOrder LIKE '%$key%')";
+      $result = $conn->query($sql);
+      while($my_roow = $result->fetch_assoc())
+      {
+          $orderId; = $my_row[OrderOut_ID];
+          $orderDate; = $my_row[OrderOut_DateOrder];
+          $customerId; = $my_row[Customer_ID];
+          $customerName; = $my_row[Customer_Name];
+          $employeeId; = $my_row[Employee_ID];
+          $employeeName; = $my_row[Employee_Name];
+          $orderList[] = new Order($orderId,$orderDate,$customerId,$customerName,$employeeId,$employeeName);
+      }
+      require("connection_close.php");
+      return $orderList;
+  }
+    
+  public static function add($orderId,$orderDate,$customerId,$employeeId)
+  {
+      require("connection_connect.php");
+      $sql = "INSERT INTO 'OrderOut' ('OrderOut_ID','OrderOut_DateOrder','Customer_ID','EmployeeSeller_ID','OrderOut_PaymentCondition','OrderOut_EarnestMoneyREQ','OrderOut_EarnestMoneyREQStatus','OrderOut_EarnestMoneyPaidDate','Approver_ID','OrderOut_DateApprove','OrderOut_ReservePercent','OrderOut_Status','OrderOut_DeliveryStatus') VALUES
+             ('$orderId','$orderDate','$customerId','$employeeId',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL)";
+      $result = $conn->query($sql);
+      require("connection_close.php");
+      return "Add Success $result rows";
+  }
+    
+  
 }
 ?>
