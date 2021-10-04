@@ -12,12 +12,12 @@ class Customer
     {
         $customerList = [];
         require("connection_connect.php");
-        $sql = "SELECT * FROM Customer";
+        $sql = "select * from Customer";
         $result = $conn->query($sql);
         while($my_row = $result->fetch_assoc()) 
         {
-            $CusID = $my_row['Customer_ID'];
-            $CusName = $my_row['Customer_Name'];
+            $CusID = $my_row[Customer_ID];
+            $CusName = $my_row[Customer_Name];
             $customerList[] = new Customer($CusID, $CusName);
         }
         require("connection_close.php");

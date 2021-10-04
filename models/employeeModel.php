@@ -12,16 +12,16 @@ class Employee
     {
         $employeeList = [];
         require("connection_connect.php");
-        $sql = "SELECT * FROM Employee";
+        $sql = "select * from Employee";
         $result = $conn->query($sql);
         while($my_row = $result->fetch_assoc()) 
         {
-            $EmpID = $my_row['Employee_ID'];
-            $EmpName = $my_row['Employee_Name'];
+            $EmpID = $my_row[Employee_ID];
+            $EmpName = $my_row[Employee_Name];
             $employeeList[] = new Customer($EmpID, $EmpName);
         }
         require("connection_close.php");
-        return $employeeList;
+        return $customerList;
     }
 }
 ?>
