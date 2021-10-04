@@ -1,5 +1,20 @@
-<table border = 1>
+<html>
+     <body>
+     <br>
+     จัดทำโดย 6220504666 นายธนพัฒน์ วงษ์ตั้งเจริญสุข
+     <br>
+     <br>
 New Order : <a href="?controller=order&action=newOrder">Click </a><br>
+
+<form method="get" action="">
+        <input type="text" name="key">
+        <input type="hidden" name="controller" value="order" />
+        <button type="submit" name="action" value="searchOrder"> Search </button>
+    </form>
+    <br>
+     </body>
+</html>
+<table border = 1>
 <tr>
      <td>OrderID</td>
      <td>OrderDate</td>

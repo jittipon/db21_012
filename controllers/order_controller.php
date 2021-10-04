@@ -16,14 +16,21 @@ class OrderController
         require_once('views/order/newOrder.php');
     }
 
-    public function addOrder(){
-        
+    public function addOrder()
+    {
         $orderId = $_GET['orderId'];
         $orderDate = $_GET['orderDate'];
         $customerId = $_GET['customerId'];
         $employeeId = $_GET['employeeId'];
         Order::add($orderId,$orderDate,$customerId,$employeeId);
         OrderController::index();
+    }
+
+    public function searchOrder()
+    {
+        $key = $_GET['key'];
+        $order_list = Order::search($key);
+        require_once('views/order/index_order.php');
     }
 }
 ?>
