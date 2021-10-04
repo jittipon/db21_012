@@ -85,6 +85,22 @@ class Order
       return "Add Success $result rows";
   }
     
+  public static function update($orderId,$orderDate,$customerId,$employeeId)
+  {
+      require("connection_connect.php");
+      $sql = "UPDATE OrderOut SET OrderOut_DateOrder = '$orderDate',EmployeeSeller_ID = '$employeeId',Customer_ID = 'customerId' WHERE OrderOut.Order_ID = '$orderId'";
+      $result = $conn->query($sql);
+      require("connection_close.php");
+      return "Update Success $result rows";
+  }
   
+  public static function delete($orderId)
+  {
+      require("connection_connect.php");
+      $sql = "DELETE FROM quotation WHERE quotation.Q_ID = '$Q_ID'";
+      $result = $conn->query($sql);
+      require("connection_close.php");
+      return "Delete Success $result rows";
+  }
 }
 ?>
