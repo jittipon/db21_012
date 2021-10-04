@@ -24,12 +24,12 @@ class Order
       $sql = "SELECT * FROM OrderOut,customer,employee WHERE OrderOut.OrderOut_ID = 'orderId' AND OrderOut.Customer_ID = Customer.Customer_ID AND OrderOut.EmployeeSeller_ID = Employee.Employee_ID";
       $result = $conn->query($sql);
       $my_row = $result->fetch_assoc();
-      $orderId = $my_row[OrderOut_ID];
-      $orderDate = $my_row[OrderOut_DateOrder];
-      $customerId = $my_row[Customer_ID];
-      $customerName = $my_row[Customer_Name];
-      $employeeId = $my_row[Employee_ID];
-      $employeeName = $my_row[Employee_Name];
+      $orderId = $my_row['OrderOut_ID'];
+      $orderDate = $my_row['OrderOut_DateOrder'];
+      $customerId = $my_row['Customer_ID'];
+      $customerName = $my_row['Customer_Name'];
+      $employeeId = $my_row['Employee_ID'];
+      $employeeName = $my_row['Employee_Name'];
       require("connection_close.php");
       return new Order($orderId,$orderDate,$customerId,$customerName,$employeeId,$employeeName);
   }
@@ -38,16 +38,16 @@ class Order
   {
       $orderList = [];
       require("connection_connect.php");
-      $sql = "SELECT * FROM OrderOut,customer,employee WHERE OrderOut.Customer_ID = Customer.Customer_ID AND OrderOut.EmployeeSeller_ID = Employee.Employee_ID ORDER BY OrderOut.OrderOut_ID";
+      $sql = "SELECT * FROM OrderOut";
       $result = $conn->query($sql);
       while($my_roow = $result->fetch_assoc())
       {
-          $orderId = $my_row[OrderOut_ID];
-          $orderDate = $my_row[OrderOut_DateOrder];
-          $customerId = $my_row[Customer_ID];
-          $customerName = $my_row[Customer_Name];
-          $employeeId = $my_row[Employee_ID];
-          $employeeName = $my_row[Employee_Name];
+          $orderId = $my_row['OrderOut_ID'];
+          $orderDate = $my_row['OrderOut_DateOrder'];
+          $customerId = $my_row['Customer_ID'];
+          $customerName = $my_row['Customer_Name'];
+          $employeeId = $my_row['Employee_ID'];
+          $employeeName = $my_row['Employee_Name'];
           $orderList[] = new Order($orderId,$orderDate,$customerId,$customerName,$employeeId,$employeeName);
       }
       require("connection_close.php");
@@ -63,12 +63,12 @@ class Order
       $result = $conn->query($sql);
       while($my_roow = $result->fetch_assoc())
       {
-          $orderId = $my_row[OrderOut_ID];
-          $orderDate = $my_row[OrderOut_DateOrder];
-          $customerId = $my_row[Customer_ID];
-          $customerName = $my_row[Customer_Name];
-          $employeeId = $my_row[Employee_ID];
-          $employeeName = $my_row[Employee_Name];
+          $orderId = $my_row['OrderOut_ID'];
+          $orderDate = $my_row['OrderOut_DateOrder'];
+          $customerId = $my_row['Customer_ID'];
+          $customerName = $my_row['Customer_Name'];
+          $employeeId = $my_row['Employee_ID'];
+          $employeeName = $my_row['Employee_Name'];
           $orderList[] = new Order($orderId,$orderDate,$customerId,$customerName,$employeeId,$employeeName);
       }
       require("connection_close.php");
