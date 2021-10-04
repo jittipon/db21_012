@@ -1,6 +1,7 @@
 <?php
 //$controllers = array('pages'=>['home','error']); //list controller and action
-$controllers = array('pages'=>['home','error'],'order'=>['index','newOrder','addOrder','searchOrder','updateFromOrder','updateOrder']);
+$controllers = array('pages'=>['home','error'],'order'=>['index','newOrder'],
+'priceRange'=>['index','newOrder','search']);
 
 function call($controller,$action)
 {
@@ -13,6 +14,10 @@ function call($controller,$action)
                         require_once("models/customerModel.php");
                         require_once("models/employeeModel.php");
                         $controller = new OrderController();
+                        break;
+        case "priceRange":  
+                        require_once("models/priceRangeModel.php");
+                        $controller = new PriceRangeController();
                         break;
     }
     $controller->{$action}();

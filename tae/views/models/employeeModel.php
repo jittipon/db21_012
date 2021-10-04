@@ -1,5 +1,5 @@
 <?php
-class Customer
+class Employee
 {
     public $id, $name;
 
@@ -10,15 +10,15 @@ class Customer
     }
     public static function getAll()
     {
-        $customerList = [];
+        $employeeList = [];
         require("connection_connect.php");
-        $sql = "SELECT * FROM Customer";
+        $sql = "SELECT * FROM Employee";
         $result = $conn->query($sql);
         while($my_row = $result->fetch_assoc()) 
         {
-            $CusID = $my_row['Customer_ID'];
-            $CusName = $my_row['Customer_Name'];
-            $customerList[] = new Customer($CusID, $CusName);
+            $EmpID = $my_row['Employee_ID'];
+            $EmpName = $my_row['Employee_Name'];
+            $employeeList[] = new Customer($EmpID, $EmpName);
         }
         require("connection_close.php");
         return $customerList;
