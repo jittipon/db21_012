@@ -1,19 +1,6 @@
-<html>
-     <body>
-     <br>
-     จัดทำโดย 6220504666 นายธนพัฒน์ วงษ์ตั้งเจริญสุข
-     <br>
-     <br>
-New Order : <a href="?controller=order&action=newOrder">Click </a><br>
+<<<<<<< HEAD
 
-<form method="get" action="">
-        <input type="text" name="key">
-        <input type="hidden" name="controller" value="order" />
-        <button type="submit" name="action" value="searchOrder"> Search </button>
-    </form>
-    <br>
-     </body>
-</html>
+=======
 <table border = 1>
 <tr>
      <td>OrderID</td>
@@ -27,15 +14,17 @@ New Order : <a href="?controller=order&action=newOrder">Click </a><br>
 <?php
   foreach($order_list as $OrderOut)
   {
+      echo "hello";
        echo 
       "<tr>
       <td>$OrderOut->orderId</td>
       <td>$OrderOut->orderDate</td>
       <td>$OrderOut->customerName</td>
       <td>$OrderOut->employeeName</td>
-      <td>update</td>
-      <td>delete</td>
+      <td>$OrderOut->update</td>
+      <td>$OrderOut->delete</td>
       </tr>";
   }
 echo "</table>";
 ?>
+>>>>>>> fe08dfb0054515873fa3a06726aee0afb1bd46bd
