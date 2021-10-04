@@ -9,15 +9,10 @@ function call($controller,$action)
     {
         case "pages":   $controller = new PagesController();
                         break;
-        case "order":   echo "Dream1";
-                        require_once("models/orderModel.php");
-                        echo "Dream2";
+        case "order":   require_once("models/orderModel.php");
                         require_once("models/customerModel.php");
-                        echo "Dream3";
                         require_once("models/employeeModel.php");
-                        echo "Dream4";
                         $controller = new OrderController();
-                        echo "Dream5";
                         break;
     }
     $controller->{$action}();
