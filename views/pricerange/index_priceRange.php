@@ -9,7 +9,6 @@
 <table border = 1>
 New Order : <a href="?controller=priceRange&action=newOrder">Click </a><br>
 <tr>
-     echo "HELLOOOOOOOOOO"
      <td>priceID</td>
      <td>pricePrice</td>
      <td>priceColor</td>
