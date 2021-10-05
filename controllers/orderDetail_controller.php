@@ -47,9 +47,11 @@
 
             public function updateForm(){
                 $id = $_GET['orderDetailID'];
+                #$productWithColorID = $_GET['productWithColorID'];
                 $orderDetail = orderDetail::get($id);
                 $productWithColorList = productWithColor::getAll();
                 $orderOutList = orderOut::getAll();
+                echo "order Detail produectWithColor is $orderDetail->prductWithColorID";
                 echo "now is up date : ";
                 echo $id;
                 require_once('views/orderDetail/updateForm_orderDetail.php');    
@@ -57,13 +59,13 @@
 
             public function update(){
                 $ID = $_GET['ID'];
-                echo "update orderDetail ID is $ID";
+                echo "<< update orderDetail ID is $ID >>";
                 $orderDetailID = $_GET['orderDetailIDUpdate'];
                 $orderDetailAmount = $_GET['orderDetailAmount'];
                 $orderDetailColorAmount = $_GET['orderDetailColorAmount'];
-                $orderOutID= $_GET['orderOutID'];
-                $productWithColorID=$_GET['productWithColorID'];
-                
+                $orderOutID = $_GET['orderOutID'];
+                $productWithColorID = $_GET['productWithColorID'];
+                echo"<< $orderDetailID , $orderDetailAmount , $orderDetailColorAmount , $orderOutID , $productWithColorID , $ID >>";
                 orderDetail::update($orderDetailID, $orderDetailAmount,$orderDetailColorAmount , $orderOutID, $productWithColorID,$ID);
                 orderDetailController::index();
             }

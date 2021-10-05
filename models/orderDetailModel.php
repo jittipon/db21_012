@@ -54,7 +54,7 @@
         $orderDetailAmount=$myRow['OrderDetail_Amount'];
         $orderDetailcolorAmount=$myRow['OrderDetail_ColorAmount'];
         $orderOutID=$myRow['OrderOut_ID'];
-        $productWithColorID=$myRow['productWithColor_ID'];
+        $productWithColorID=$myRow['ProductWithColor_ID'];
         
         require("connection_close.php");
         return new orderDetail($orderDetailID, $orderDetailAmount, $orderDetailcolorAmount, $orderOutID, $productWithColorID);

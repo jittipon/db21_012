@@ -13,7 +13,6 @@ Search</button>
 </form>
 </form>
 
-
 <?php 
        
         foreach($orderDetailList as $orderDetail){
@@ -23,8 +22,8 @@ Search</button>
             <td>$orderDetail->orderDetailColorAmount</td>
             <td>$orderDetail->orderOutID</td>
             <td>$orderDetail->productWithColorID</td>
-            <td>[<a href=?controller=orderDetail&action=updateForm&orderDetailID=$orderDetail->orderDetailID>update </a>]</td>
-            <td>[<a href=?controller=orderDetail&action=deleteConfirm&orderDetailID=$orderDetail->orderDetailID>delete</a>]</td>
+            <td>[<a href=?controller=orderDetail&action=updateForm&orderDetailID=$orderDetail->orderDetailID >update </a>]</td>
+            <td>[<a href=?controller=orderDetail&action=deleteConfirm&orderDetailID=$orderDetail->orderDetailID >delete</a>]</td>
             </tr>";
     }
     
