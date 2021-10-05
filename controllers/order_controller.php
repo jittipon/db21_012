@@ -10,7 +10,7 @@ class OrderController
 
     public function newOrder()
     {
-        $order_list = Order::getAll();
+        //$order_list = Order::getAll();
         $employee_list = Employee::getAll();
         $customer_list = Customer::getAll();
         require_once('views/order/newOrder.php');
@@ -36,14 +36,16 @@ class OrderController
     public function updateOrder()
     {
         $orderId = $_GET['orderId'];
+        
         $orderDate = $_GET['orderDate'];
         $customerId = $_GET['customerId'];
         $employeeId = $_GET['employeeId'];
+        echo "$orderId,$orderDate,$customerId,$employeeId";
         Order::update($orderId,$orderDate,$customerId,$employeeId);
         OrderController::index();
     }
 
-    public function updatFormOrder()
+    public function updateFormOrder()
     {
         $id = $_GET['orderId'];
         $order = Order::get($id);
