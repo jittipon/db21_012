@@ -7,13 +7,13 @@
     public static function getAll(){
 
         $orderOutList = [];
-
+        
        
         require("connection_connect.php");
         $sql = "select distinct * from OrderOut";
         $result = $conn->query($sql);
         while($myRow = $result->fetch_assoc()){
-          
+            #echo $orderOutID;
             $orderOutID = $myRow['OrderOut_ID'];
             $orderOutList[] = new orderOut($orderOutID);
         }

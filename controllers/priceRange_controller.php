@@ -42,6 +42,7 @@ class PriceRangeController
     }
 
     public function delete(){
+        
         $priceProductID = $_GET['priceID'];
 
         PriceRange::delete($priceProductID);

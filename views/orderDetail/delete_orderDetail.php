@@ -1,18 +1,16 @@
+<?php
+   
+         echo "<br>Are you sure to delete this orderDetail<br>
+            
+            <br>$orderDetail->orderDetailID
+            $orderDetail->orderDetailAmount
+            $orderDetail->orderDetailColorAmount 
+            $orderDetail->orderOutID
+            $orderDetail->productWithColorID<br>";?>
+<form method="get" action="">
+   <input typte = "hidden" name="controller" value="orderDetail"/>
+   <input type = "hidden" name="orderDetailID" value ="<?php echo $orderDetail->orderDetailID;?>"/>
+   <button type="submit" name="action" value ="index">back</button>
+   <button type="submit" name="action" value="delete">Delete</button>
+<from>
 
-?>
-<html>
-<head></head>
-<body>
-   <?php //echo "controller = ".$controller.",action = ".$action;?>
-  
-    
-   <br>
-        [<a href="">Home(หน้าหลัก) </a>]
-        [<a href="?controller=order&action=index">order/Dream </a>]
-        [<a href="?controller=orderDetail&action=index">orderDetail </a>]
-        [<a href="?controller=priceRange&action=index">priceRange/T </a>]
-   <br>
-   <?php echo "controller = ".$controller.",action = ".$action;?>
-   <?php require_once("routes.php");?>
-</body>
-</html> 

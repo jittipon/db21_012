@@ -83,7 +83,6 @@ class Order
   public static function add($orderId,$orderDate,$customerId,$employeeId)
   {
       require("connection_connect.php");
-      echo "$orderId,$orderDate,$customerId,$employeeId";
       $sql = "INSERT INTO `OrderOut` (`OrderOut_ID`, `OrderOut_DateOrder`, `Customer_ID`, `Employee_ID`, `OrderOut_PaymentCondition`, `OrderOut_EarnestMoneyREQ`, `OrderOut_EarnestMoneyREQStatus`, `OrderOut_EarnestMoneyPaidDate`, `Approver_ID`, `OrderOut_DateApprove`, `OrderOut_ReservePercent`, `OrderOut_Vat`, `OrderOut_Status`, `OrderOut_DeliveryStatus`) VALUES ('$orderId', '$orderDate', '$customerId', '$employeeId', '0', NULL, NULL, NULL, NULL, NULL, NULL, '0.7', 'offered', NULL);";
       $result = $conn->query($sql);
       require("connection_close.php");

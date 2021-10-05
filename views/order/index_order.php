@@ -33,8 +33,8 @@ New Order : <a href="?controller=order&action=newOrder">Click </a><br>
       <td>$OrderOut->orderDate</td>
       <td>$OrderOut->customerName</td>
       <td>$OrderOut->employeeName</td>
-      <td>update</td>
-      <td>delete</td>
+      <td> <a href=?controller=order&action=updateFormOrder&orderId=$OrderOut->id> Update </a></td>
+      <td> <a href=?controller=order&action=deleteConfirmOrder&orderId=$OrderOut->id> Delete </a></td>
       </tr>";
   }
 echo "</table>";

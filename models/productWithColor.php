@@ -13,7 +13,7 @@
         $sql = "select distinct * from ProductWithColor";
         $result = $conn->query($sql);
         while($myRow = $result->fetch_assoc()){
-        
+            #echo $myRow['ProductWithColor_ID'];
             $productWithColorID = $myRow['ProductWithColor_ID'];
             $productWithColorList[] = new productWithColor($productWithColorID);
         }
