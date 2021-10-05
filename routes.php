@@ -3,7 +3,9 @@
 $controllers = array('pages'=>['home','error'],
 'order'=>['index','newOrder','addOrder','searchOrder','updateFormOrder','updateOrder','deleteConfirmOrder','deleteOrder'],
 'orderDetail'=>['index','updateForm','update','search','deleteConfirm','addOrderDetail','newOrderDetail','delete'],
-'priceRange'=>['index','newOrder','search','addPriceRange','newPriceRange', 'deleteConfirm']);
+'priceRange'=>['index','newOrder','search','addPriceRange','newPriceRange', 'deleteConfirm','delete']);
+
+
 
 function call($controller,$action)
 {
