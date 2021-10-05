@@ -69,7 +69,7 @@ class PriceRange
 
 public static function add($Price_ID,$Price_Price,$Price_ColorPrice,$Price_RangeAmount,$Product_ID){
     require("connection_connect.php");
-    $sql = "insert into Price (Price_ID,Price_Price,Price_ColorPrice,Price_RangeAmount,Product_ID) values ('$Price_ID','$Price_Price','$Price_ColorPrice','$Price_RangeAmount','$Product_ID')";
+    $sql = "INSERT INTO Price (Price_ID,Price_Price,Price_ColorPrice,Price_RangeAmount,Product_ID) VALUES ('$Price_ID','$Price_Price','$Price_ColorPrice','$Price_RangeAmount','$Product_ID')";
     $result = $conn->query($sql);
     require("connection_close.php");
     return "add success $result rows";

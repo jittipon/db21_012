@@ -29,8 +29,16 @@ New Order : <a href="?controller=priceRange&action=newOrder">Click </a><br>
       <td>$PriceRange->priceColor</td>
       <td>$PriceRange->priceRangeAmount</td>
       <td>$PriceRange->priceProductID</td>
-      <td>update</td>
-      <td>delete</td>
+      <td>
+          <a href=?controller=priceRange&action=updateConfirm>
+               update
+          </a>
+      </td>
+      <td>
+          <a href=?controller=priceRange&action=deleteConfirm&priceProductID=$priceRange->priceProductID>
+               delete
+          </a>
+      </td>
       </tr>";
   }
 echo "</table>";

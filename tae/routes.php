@@ -1,7 +1,7 @@
 <?php
 //$controllers = array('pages'=>['home','error']); //list controller and action
 $controllers = array('pages'=>['home','error'],'order'=>['index','newOrder'],
-'priceRange'=>['index','newOrder','search','addPriceRange','newPriceRange']);
+'priceRange'=>['index','newOrder','search','addPriceRange','newPriceRange', 'deleteConfirm','delete']);
 
 function call($controller,$action)
 {

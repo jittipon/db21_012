@@ -33,6 +33,22 @@ class PriceRangeController
         PriceRangeController::index();
     }
 
+    public function deleteConfirm(){
+        $priceProductID = $_GET['priceProductID'];
+        $priceRange = PriceRange::get($priceProductID);
+
+        require_once("./views/pricerange/deleteConfirm.php");
+
+    }
+
+    public function delete(){
+        $priceProductID = $_GET['priceID'];
+
+        PriceRange::delete($priceProductID);
+
+        PriceRangeController::index();
+    }
+
 
 }
 ?>
