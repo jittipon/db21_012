@@ -82,7 +82,7 @@
 
     public static function update($orderDetailID, $orderDetailAmount,$orderDetailColorAmount , $orderOutID, $productWithColorID,$ID){
         require("connection_connect.php");
-        echo "$orderDetailID, $orderDetailAmount,$orderDetailColorAmount , $orderOutID, $productWithColorID";
+        echo "con firm data update is $orderDetailID, $orderDetailAmount,$orderDetailColorAmount , $orderOutID, $productWithColorID , $ID";
         $sql = "UPDATE `OrderDetail` SET `OrderDetail_ID` = '$orderDetailID', `OrderDetail_Amount` = ' $orderDetailAmount', `OrderDetail_ColorAmount` = '$orderDetailColorAmount', `OrderOut_ID` = '$orderOutID', `ProductWithColor_ID` = '$productWithColorID' WHERE `OrderDetail`.`OrderDetail_ID` = '$ID';";
         $result=$conn->query($sql);
         require("connection_close.php");

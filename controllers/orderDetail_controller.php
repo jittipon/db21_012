@@ -59,7 +59,7 @@
 
             public function update(){
                 $ID = $_GET['ID'];
-                echo "<< update orderDetail ID is $ID >>";
+                echo "<<    update orderDetail ID is $ID >>";
                 $orderDetailID = $_GET['orderDetailIDUpdate'];
                 $orderDetailAmount = $_GET['orderDetailAmount'];
                 $orderDetailColorAmount = $_GET['orderDetailColorAmount'];
