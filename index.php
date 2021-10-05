@@ -21,7 +21,6 @@ else
         [<a href="?controller=orderDetail&action=index">orderDetail </a>]
         [<a href="?controller=priceRange&action=index">priceRange </a>]
    <br>
-   <?php //echo "controller = ".$controller.",action = ".$action;?>
    <?php require_once("routes.php");?>
 </body>
 </html> 
