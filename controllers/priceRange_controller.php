@@ -4,14 +4,12 @@ class PriceRangeController
 {
     public function index()
     {
-        echo "INDEXXXXXX";
         
         $pricerange_list = Pricerange::getAll();
         require_once('views/pricerange/index_priceRange.php');
     }
 
     public function search(){
-        echo "SEARCHHHHHHHHHHHH";
         $key = $_GET['key'];
         $pricerange_list = Pricerange::search($key);
 
