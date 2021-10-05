@@ -12,7 +12,6 @@ function call($controller,$action)
   
     require_once("controllers/".$controller."_controller.php");
     
-    echo $controller;
     switch($controller)
     {
         case "pages":   $controller = new PagesController();
